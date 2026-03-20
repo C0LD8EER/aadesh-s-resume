@@ -1,0 +1,449 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background: white;
+    color: #1a1a2e;
+    font-family: 'Instrument Sans', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.navigation-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 200;
+    background: #1c1c1c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 44px;
+    height: 56px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.logo {
+
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.logo:hover { 
+    opacity: 0.6; 
+}
+
+.navigation-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    flex-direction: row;
+}
+
+.navigation-links a {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.navigation-links a:hover { 
+    opacity: 0.55; 
+}
+
+.header-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 56px;
+}
+
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px 100px;
+}
+
+.name {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(52px, 8vw, 92px);
+    font-weight: 400;
+    color: white;
+    letter-spacing: -0.02em;
+    line-height: 1.0;
+    margin-bottom: 22px;
+}
+
+.name-subtitle {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 44px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.social-btn {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    background: rgba(255,255,255,0.07);
+    transition: color 0.2s, background 0.2s;
+}
+
+/*-----------------------------------------------------------------------------*/
+
+.section {
+    padding: 72px 0;
+    border-bottom: 1px solid #e4e6ef;
+}
+
+.section:last-of-type { 
+    border-bottom: none; 
+}
+
+.section-label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #9999b8;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e4e6ef;
+}
+
+/*------------------------------------------------------*/
+
+.about-section-text { 
+    font-size: 17px;
+    color: #555570;
+    line-height: 1.85; 
+}
+.about-section-text strong { 
+    color: #1a1a2e;
+    font-weight: 500; 
+}
+
+/*----------------------------------------------------*/
+
+.education-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  padding: 28px 0;
+  border-bottom: 1px solid #e4e6ef;
+}
+.education-item:first-of-type { padding-top: 0; }
+.education-item:last-of-type  { border-bottom: none; padding-bottom: 0; }
+
+.school {
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+.degree {
+  font-size: 14px;
+  color: #555570;
+  margin-bottom: 8px;
+}
+
+.status {
+  display: inline-block;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: #0096c7;
+  background: #e8f7fc;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+.year {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: #9999b8;
+  white-space: nowrap;
+  text-align: right;
+  padding-top: 4px;
+}
+
+
+/*----------------------------------------------------------*/
+
+.sport-card {
+    background: #f7f9fa;
+    border: 1px solid #e4e6ef;
+    border-radius: 12px;
+    padding: 32px 32px 28px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.sport-icon { 
+    font-size: 40px; 
+    line-height: 1; 
+}
+
+.sport-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+.sport-role {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: #0096c7;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.sport-desc {
+    font-size: 15px;
+    color: #555570;
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+.medal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #eef9ff;
+    border: 1px solid #a8ddf0;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: #005f80;
+    letter-spacing: 0.03em;
+}
+
+.hobby-row {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e4e6ef;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #555570;
+    grid-column: 1 / -1;
+}
+
+.running-icon { 
+    font-size: 18px; 
+}
+
+/*------------------------------------------*/
+
+.skills-grid { 
+    display: grid; 
+    gap: 24px; 
+}
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.skill-type {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9999b8;
+    padding-top: 6px;
+}
+
+.skill-items { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px;
+}
+
+.skill-name {
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 6px;
+    border: 1px solid #e4e6ef;
+    background: #f7f9fa;
+    color: #1a1a2e;
+}
+
+.skill-name-learning {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #e4e6ef;
+    background: transparent;
+    color: #1a1a2e;
+    font-size: 13px;
+}
+
+
+.skill-name-learning::before {
+    content: '~ ';
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    color: #9999b8;
+}
+
+/*------------------------------------------------*/
+
+.footer {
+    position: relative;
+    background: #1c1c1c;
+    overflow: hidden;
+}
+
+.footer-upper {
+    position: relative;
+    z-index: 10;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 64px 44px 32px;
+}
+
+.footer-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 56px;
+}
+
+.footer-columns-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.footer-contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-contact-list li {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+}
+.footer-contact-list a {
+    color: #29b6e8;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.footer-contact-list a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+
+.footer-site-navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer-site-navigation a {
+    font-size: 15px;
+    color: #29b6e8;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.footer-site-navigation a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: whitesmoke;
+    letter-spacing: 0.04em;
+}
+
+/*-------------------------------------------------*/
+
+.particle-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #0d47a1; /* Dark background so white stars show up */
+    color: white;
+}
+
+.canvas-area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}

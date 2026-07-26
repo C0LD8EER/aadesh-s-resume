@@ -49,24 +49,9 @@ body {
 }
 
 .navigation-links {
-    display: flex;
-    gap: 30px;
     list-style: none;
-    flex-direction: row;
-}
-
-.navigation-links a {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.navigation-links a:hover { 
-    opacity: 0.55; 
+    margin: 0;
+    padding: 0;
 }
 
 .header-section {
@@ -440,10 +425,182 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+    pointer-events: none;
 }
 
 .content {
     position: relative;
     z-index: 2;
     pointer-events: none;
+}
+
+/* Navigation Hamburger Button */
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 210;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.menu-toggle:hover {
+    opacity: 0.85;
+}
+
+.menu-toggle .icon-close {
+    display: none;
+}
+
+.menu-toggle.active .icon-open {
+    display: none;
+}
+
+.menu-toggle.active .icon-close {
+    display: block;
+}
+
+/* Full Overlay Hamburger Menu Drawer */
+.navigation-links {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 40px;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(-8px);
+    z-index: 190;
+}
+
+.navigation-links.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.navigation-links a {
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.navigation-links a:hover {
+    color: #29b6e8;
+    opacity: 0.85;
+}
+
+/* Prevent scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .navigation-bar {
+        padding: 0 20px;
+    }
+
+    .navigation-links a {
+        font-size: 20px;
+    }
+
+    .header {
+        padding: 40px 16px 80px;
+    }
+
+    .name {
+        font-size: clamp(38px, 10vw, 64px);
+    }
+
+    .section {
+        padding: 52px 0;
+    }
+
+    .education-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .year {
+        text-align: left;
+        padding-top: 0;
+    }
+
+    .sport-card {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+        gap: 16px;
+    }
+
+    .skill-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .skill-type {
+        padding-top: 0;
+    }
+
+    .footer-upper {
+        padding: 48px 20px 28px;
+    }
+
+    .footer-column {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .navigation-bar {
+        padding: 0 16px;
+    }
+
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-upper {
+        padding: 40px 16px 24px;
+    }
 }
